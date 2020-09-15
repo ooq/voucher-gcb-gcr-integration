@@ -27,6 +27,6 @@ steps:
       -H "Content-Type: application/json" \
       -d "{\"image_url\": \"$(/bin/cat image-digest.txt)\"}" \
       https://voucher-test-myyhkwusua-uc.a.run.app/all
-    waitFor: push
+    waitFor: ["push"]
     id: vulnsign
 images: ['gcr.io/$PROJECT_ID/test-image-for-voucher:latest']
